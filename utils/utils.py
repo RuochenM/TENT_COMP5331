@@ -3,6 +3,15 @@ import scipy.sparse as sp
 from sklearn.metrics import f1_score
 import torch
 
+def encode_onehot(labels):
+    classes = set(labels)
+    classes_dict = {c: np.identity(len(classes))[i, :] for i, c in
+                    enumerate(classes)}
+    labels_onehot = np.array(list(map(classes_dict.get, labels)),
+                             dtype=np.int32)
+    return labels_onehot
+
+
 def l2_normalize(x):
     norm = x.pow(2).sum(1, keepdim=True).pow(1. / 2)
     out = x.div(norm)
@@ -16,7 +25,6 @@ def normalize(mx):
     r_mat_inv = sp.diags(r_inv)
     mx = r_mat_inv.dot(mx)
     return mx
-
 
 def normalize_adj(adj):
     """Symmetrically normalize adjacency matrix."""

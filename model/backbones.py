@@ -167,8 +167,6 @@ class Linear(nn.Module):
         else:
             return torch.mm(input,self.weight)+self.bias
 
-
-
 class GCN(nn.Module):
     def __init__(self, nfeat, nhid, nclass, dropout):
         super(GCN, self).__init__()

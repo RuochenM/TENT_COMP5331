@@ -9,9 +9,9 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-from utils.gcn_utils import accuracy
-from utils.gcn_dataset import load_data
-from model.gcn_models import GCN
+from utils.utils import accuracy
+from utils.dataset import load_data
+from model.backbones import GCN
 
 # Training settings
 parser = argparse.ArgumentParser() 
