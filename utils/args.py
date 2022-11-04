@@ -19,5 +19,5 @@ def get_args():
                         help='Number of hidden units.')
     parser.add_argument('--dropout', type=float, default=0.2,
                         help='Dropout rate (1 - keep probability).')
-
+                        
     return parser.parse_args()

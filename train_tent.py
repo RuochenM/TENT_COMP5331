@@ -50,8 +50,7 @@ if __name__ == '__main__':
                 for repeat in range(5):
                     print('done')
                     print(dataset)
-                    print('N={},K={}'.format(N,K))
-
+                    print('N={},K={}'.format(N,K))  
                     model = GCN_dense(nfeat=args.hidden1,
                                     nhid=args.hidden2,
                                     nclass=labels.max().item() + 1,
